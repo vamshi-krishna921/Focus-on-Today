@@ -1,6 +1,9 @@
 let checkBoxes = document.querySelectorAll(".circle");
 let inputBoxes = document.querySelectorAll("input");
 let error = document.querySelector(".error");
+let progress = document.querySelector('.progress');
+let count = 0;
+let taskCompleted = 0;
 checkBoxes.forEach((element) => {
   element.addEventListener("click", () => {
     let img = element.querySelector(".check-icon");
@@ -18,8 +21,14 @@ checkBoxes.forEach((element) => {
     });
     if (inputs) {
       let inputClass = element.nextElementSibling;
-      inputClass.classList.toggle("inputClass");
+      inputClass.classList.toggle("inputs");
+      error.style.display = "none";
       img.classList.toggle("check-completed");
+      count += 33.33;
+      progress.style.width = `${count}%`;
+      taskCompleted++;
+      progress.textContent = `${taskCompleted}/3 completed`;
+
     } else {
       error.style.display = "block";
     }
