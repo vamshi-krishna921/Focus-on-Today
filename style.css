@@ -48,6 +48,7 @@ p {
     padding-left: 20px;
     align-items: center;
     font-size: 13px;
+    transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   }
 }
 .error{
